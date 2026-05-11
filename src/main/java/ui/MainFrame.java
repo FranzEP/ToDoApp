@@ -132,11 +132,24 @@ public class MainFrame extends JFrame {
     private JButton createStyledButton(String text) {
         JButton btn = new JButton(text);
         btn.setFont(MAIN_FONT);
+
+        // Farben setzen
         btn.setBackground(ACCENT_COLOR);
         btn.setForeground(Color.WHITE);
-        btn.setFocusPainted(false);
+
+        // --- BUGFIX FÜR DAS SYSTEM-DESIGN (Windows/Mac) ---
+        // Zwingt Swing, unsere Hintergrundfarbe zu verwenden und den grauen System-Button abzuschalten
+        btn.setOpaque(true);
+        btn.setContentAreaFilled(true);
+        btn.setBorderPainted(false); // Schaltet den nativen, grauen 3D-Rahmen des Betriebssystems ab
+
+        // Wir geben dem Button stattdessen einen eigenen, modernen Rand
         btn.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        // ---------------------------------------------------
+
+        btn.setFocusPainted(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         return btn;
     }
 
