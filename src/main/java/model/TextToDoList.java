@@ -5,7 +5,7 @@ public class TextToDoList extends ToDoList {
 
     public TextToDoList(String title) {
         super(title);
-        this.content = ""; // Startet mit leerem Text
+        this.content = ""; // startet ohne text
     }
 
     public String getContent() { return content; }

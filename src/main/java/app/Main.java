@@ -1,16 +1,15 @@
-package app; // Achte darauf, dass hier dein richtiges Package steht (z.B. app)
+package app;
 
 import ui.MainFrame;
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        // --- NEU: Modernes Design aktivieren ---
         try {
-            // Setzt das Aussehen der App auf das Standard-Design deines Betriebssystems
+            // setzt die optik der app auf die der Systemeinstellaugen
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            e.printStackTrace(); // Falls es nicht klappt, ignorieren wir es einfach
+            e.printStackTrace(); // wenn es nicht funktioniert wird es ignoriert
         }
 
         SwingUtilities.invokeLater(new Runnable() {

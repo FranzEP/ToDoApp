@@ -6,7 +6,7 @@ public class ToDoItem {
 
     public ToDoItem(String text) {
         this.text = text;
-        this.isDone = false; // Standardmäßig ist ein neuer Eintrag nicht erledigt
+        this.isDone = false; // standartmäßig ist ein neuer Eintrag nicht erledigt
     }
 
     public String getText() { return text; }

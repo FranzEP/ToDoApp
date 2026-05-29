@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
     private JPanel rightPanel;
     private final StorageManager storageManager = new StorageManager();
 
-    // DESIGN-KONSTANTEN
+    // Konstanten für das allgemeine Design
     private final Font MAIN_FONT = new Font("SansSerif", Font.PLAIN, 16);
     private final Font TITLE_FONT = new Font("SansSerif", Font.BOLD, 22);
     private final Color ACCENT_COLOR = new Color(88, 166, 255);
@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
     private final Color BORDER_COLOR = new Color(70, 70, 70);
 
     public MainFrame() {
-        setTitle("Meine ToDo App (Final Version)");
+        setTitle("Meine ToDo App ");
         setSize(900, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
         splitPane.setDividerSize(2);
         splitPane.setBackground(BG_LEFT_COLOR);
 
-        // --- LINKE SEITE ---
+        // linke Seite
         JPanel leftPanel = new JPanel(new BorderLayout());
         leftPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         leftPanel.setBackground(BG_LEFT_COLOR);
@@ -75,7 +75,7 @@ public class MainFrame extends JFrame {
         listScrollPane.getViewport().setBackground(BG_LEFT_COLOR);
         leftPanel.add(listScrollPane, BorderLayout.CENTER);
 
-        // NEU: Platz für 3 Buttons statt 2 (3 Zeilen)
+        // der Platz für drei buttons
         JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 10, 10));
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
         buttonPanel.setBackground(BG_LEFT_COLOR);
@@ -89,7 +89,7 @@ public class MainFrame extends JFrame {
         buttonPanel.add(deleteListBtn); // NEU: Der rote Löschen-Button
         leftPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        // --- AKTIONEN FÜR DIE BUTTONS LINKS ---
+        // Aktionen für die Buttons auf der linken Seite
         newTextListBtn.addActionListener(ignored -> {
             String title = JOptionPane.showInputDialog(this, "Titel der Text-Liste:", "Neu", JOptionPane.PLAIN_MESSAGE);
             if (title != null && !title.trim().isEmpty()) {
@@ -104,7 +104,7 @@ public class MainFrame extends JFrame {
             }
         });
 
-        // NEU: Logik zum Löschen ganzer Listen
+        // Logik um ganze Listen zu löschen
         deleteListBtn.addActionListener(ignored -> {
             ToDoList selected = navigationList.getSelectedValue();
             if (selected != null) {
@@ -118,8 +118,8 @@ public class MainFrame extends JFrame {
                 );
 
                 if (choice == JOptionPane.YES_OPTION) {
-                    listModel.removeElement(selected); // Aus den Daten entfernen
-                    resetRightPanel(); // Rechte Seite wieder leer machen
+                    listModel.removeElement(selected); // aus den Daten entfernen
+                    resetRightPanel(); // rechte Seite wieder leer machen
                 }
             }
         });
@@ -129,7 +129,7 @@ public class MainFrame extends JFrame {
             if (selected != null) updateRightPanel(selected);
         });
 
-        // --- RECHTE SEITE ---
+        //rechte Seite
         rightPanel = new JPanel(new BorderLayout());
         rightPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         rightPanel.setBackground(BG_RIGHT_COLOR);
@@ -142,7 +142,7 @@ public class MainFrame extends JFrame {
     }
 
     // Hilfsmethode, die aufgerufen wird, wenn noch keine Liste ausgewählt wurde
-    // oder wenn wir eine Liste gerade gelöscht haben.
+    // oder wenn eine Liste gerade gelöscht wurde
     private void resetRightPanel() {
         rightPanel.removeAll();
         JLabel hintLabel = new JLabel("Wähle eine Liste aus.");
@@ -234,7 +234,7 @@ public class MainFrame extends JFrame {
         list.sortItems();
 
         for (ToDoItem item : list.getItems()) {
-            // NEU: Ein Row-Panel, um Checkbox (links) und Löschen-Button (rechts) nebeneinander zu setzen
+            //ein Row-Panel, um Checkbox (links) und Löschen-Button (rechts) nebeneinander zu setzen
             JPanel rowPanel = new JPanel(new BorderLayout());
             rowPanel.setBackground(BG_RIGHT_COLOR);
             rowPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40)); // Verhindert, dass Zeilen zu hoch werden
@@ -253,7 +253,7 @@ public class MainFrame extends JFrame {
                 renderCheckboxes(list, listPanel);
             });
 
-            // NEU: Der kleine Löschen-Button für einzelne Einträge
+            // der kleine Löschen-Button für einzelne Einträge
             JButton deleteItemBtn = new JButton("✖");
             deleteItemBtn.setFont(MAIN_FONT);
             deleteItemBtn.setForeground(DANGER_COLOR); // Rotes Kreuz
@@ -276,7 +276,7 @@ public class MainFrame extends JFrame {
         listPanel.repaint();
     }
 
-    // Angepasste Hilfsmethode: Nimmt jetzt eine Farbe als Parameter, damit wir blaue UND rote Buttons machen können
+    //die angepasste Hilfsmethode nimmt jetzt eine Farbe als Parameter, damit wir blaue UND rote Buttons machen können
     private JButton createStyledButton(String text, Color bgColor) {
         JButton btn = new JButton(text);
         btn.setFont(MAIN_FONT);
