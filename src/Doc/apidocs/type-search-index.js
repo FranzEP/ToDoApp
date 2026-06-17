@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html","k":"18"},{"p":"model","l":"CheckboxToDoList"},{"p":"app","l":"Main"},{"p":"ui","l":"MainFrame"},{"p":"storage","l":"StorageManager"},{"p":"model","l":"TextToDoList"},{"p":"model","l":"ToDoItem"},{"p":"model","l":"ToDoList"},{"p":"storage","l":"ToDoListTypeAdapter"}];updateSearchResults();
