@@ -34,7 +34,7 @@ public class CheckboxToDoList extends ToDoList {
         List<ToDoItem> openItems = new ArrayList<>();
         List<ToDoItem> doneItems = new ArrayList<>();
 
-        // Trenne offene und erledigte Einträge
+        // Trennen von offenen und erledigten Einträgen
         for (ToDoItem item : items) {
             if (item.isDone()) {
                 doneItems.add(item);
@@ -43,7 +43,7 @@ public class CheckboxToDoList extends ToDoList {
             }
         }
 
-        // Leere die alte Liste und setze sie neu zusammen (erst offen, dann erledigt)
+        // Leert die alte Liste und setze sie neu zusammen (erst offen, dann erledigt)
         this.items.clear();
         this.items.addAll(openItems);
         this.items.addAll(doneItems);

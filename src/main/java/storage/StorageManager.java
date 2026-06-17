@@ -15,7 +15,6 @@ import java.util.List;
 /**
  * Der StorageManager ist für die Persistenzschicht der Anwendung verantwortlich.
  * Er steuert das Laden und Speichern der polymorphen ToDo-Listen in einer lokalen JSON-Datei.
- * * @author Dein Name
  * @version 1.0
  */
 public class StorageManager {
@@ -48,7 +47,7 @@ public class StorageManager {
             Type listType = new TypeToken<List<ToDoList>>() {}.getType();
             gson.toJson(lists, listType, writer);
         } catch (IOException ignored) {
-            // Fehlerbehandlung für den studentischen Rahmen vereinfacht
+
         }
     }
 

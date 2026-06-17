@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
     private final Font MAIN_FONT = new Font("SansSerif", Font.PLAIN, 16);
     private final Font TITLE_FONT = new Font("SansSerif", Font.BOLD, 22);
     private final Color ACCENT_COLOR = new Color(88, 166, 255);
-    private final Color DANGER_COLOR = new Color(231, 76, 60); // NEU: Ein warnendes Rot fürs Löschen
+    private final Color DANGER_COLOR = new Color(231, 76, 60); // Rot fürs Löschen
     private final Color BG_LEFT_COLOR = new Color(33, 33, 33);
     private final Color BG_RIGHT_COLOR = new Color(43, 43, 43);
     private final Color TEXT_COLOR = new Color(230, 230, 230);
@@ -86,7 +86,7 @@ public class MainFrame extends JFrame {
 
         buttonPanel.add(newTextListBtn);
         buttonPanel.add(newCheckboxListBtn);
-        buttonPanel.add(deleteListBtn); // NEU: Der rote Löschen-Button
+        buttonPanel.add(deleteListBtn); // rote Löschen-Button
         leftPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         // Aktionen für die Buttons auf der linken Seite
@@ -133,7 +133,7 @@ public class MainFrame extends JFrame {
         rightPanel = new JPanel(new BorderLayout());
         rightPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         rightPanel.setBackground(BG_RIGHT_COLOR);
-        resetRightPanel(); // Setzt den initialen Start-Text
+        resetRightPanel(); // setzt den initialen Start-Text
 
         splitPane.setLeftComponent(leftPanel);
         splitPane.setRightComponent(rightPanel);
@@ -276,7 +276,7 @@ public class MainFrame extends JFrame {
         listPanel.repaint();
     }
 
-    //die angepasste Hilfsmethode nimmt jetzt eine Farbe als Parameter, damit wir blaue UND rote Buttons machen können
+    //die angepasste Hilfsmethode nimmt jetzt eine Farbe als Parameter, damit wir blaue und rote Buttons machen können
     private JButton createStyledButton(String text, Color bgColor) {
         JButton btn = new JButton(text);
         btn.setFont(MAIN_FONT);
